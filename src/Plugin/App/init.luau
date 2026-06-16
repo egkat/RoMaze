@@ -17,7 +17,7 @@ local function App(props: AppProps)
 		Button = e(StudioToolbarButton, {
 			name = "RoMaze",
 			tooltip = "Open RoMaze",
-            icon = Icons.RoMazePluginIconVersionTwo,
+            icon = Icons.RoMazePluginIcon.VersionTwo,
 			onClick = function()
                 print("Activated")
 			end,

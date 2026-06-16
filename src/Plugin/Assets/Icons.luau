@@ -1,6 +1,8 @@
 return {
 
-    RoMazePluginIconVersionOne = "rbxassetid://103373547667416",
-    RoMazePluginIconVersionTwo = "rbxassetid://96044877838285",
+    RoMazePluginIcon = {
+        VersionOne = "rbxassetid://103373547667416",
+        VersionTwo = "rbxassetid://96044877838285",
+    }
 
 }
