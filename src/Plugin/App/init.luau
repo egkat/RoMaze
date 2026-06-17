@@ -1,4 +1,5 @@
 local StudioPluginContext = require(script.Components.StudioComponents.StudioPluginContext)
+local StudioPluginGui = require(script.Components.StudioComponents.StudioPluginGui)
 local StudioToolbar = require(script.Components.StudioComponents.StudioToolbar)
 local StudioToolbarButton = require(script.Components.StudioComponents.StudioToolbarButton)
 local Theme = require(script.Components.Theme)
@@ -31,6 +32,15 @@ local function App(props: AppProps)
 						end)
 					end,
 				}),
+			}),
+			StudioPluginGui = e(StudioPluginGui, {
+				active = guiEnabled,
+				onInitialState = function(initialState)
+					setGuiEnabled(initialState)
+				end,
+				onClose = function()
+					setGuiEnabled(false)
+				end,
 			}),
 		}),
 	})
