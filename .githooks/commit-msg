@@ -1,0 +1,11 @@
+#!/bin/sh
+# Enforces conventional commit prefixes. Enable with: git config core.hooksPath .githooks
+
+pattern="^(feat|fix|chore|refactor|docs|test)(\(.+\))?: .+"
+message=$(head -n1 "$1")
+
+if ! echo "$message" | grep -qE "$pattern"; then
+  echo "Commit message must start with one of: feat:, fix:, chore:, refactor:, docs:, test:" >&2
+  echo "Got: $message" >&2
+  exit 1
+fi

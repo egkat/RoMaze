@@ -79,6 +79,10 @@ All UI is built with React (`jsdotlua/react` + `jsdotlua/react-roblox`). `Studio
 - **Selene**: `selene.toml` with `std = "roblox"`.
 - **StyLua**: Configured in `.vscode/settings.json`. Format on save is expected.
 
+## Workflow
+
+**Commit messages**: Prefix with `feat:`, `fix:`, `chore:`, `refactor:`, `docs:`, or `test:` (e.g. `feat: add Kruskal maze generator`). Enforced by the `commit-msg` hook in `.githooks/` — run `git config core.hooksPath .githooks` once after cloning to enable it.
+
 ## What to avoid
 
 - Don't edit `Packages/` — managed by Wally.
