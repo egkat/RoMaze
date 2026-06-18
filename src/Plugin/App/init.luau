@@ -35,6 +35,8 @@ local function App(props: AppProps)
 			}),
 			StudioPluginGui = e(StudioPluginGui, {
 				active = guiEnabled,
+				floatingSize = Vector2.new(320, 210),
+				minimumSize = Vector2.new(300, 210),
 				onInitialState = function(initialState)
 					setGuiEnabled(initialState)
 				end,
