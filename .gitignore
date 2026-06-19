@@ -5,4 +5,4 @@ node_modules/
 sourcemap.json
 .vscode/
 .claude/
-Commands.txt/
+Commands.txt
