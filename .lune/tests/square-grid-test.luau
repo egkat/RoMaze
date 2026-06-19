@@ -1,4 +1,4 @@
-local Grid = require("../../src/Plugin/Generators/Grid")
+local Grid = require("@plugin/Generators/Grid")
 
 local CONFIGS = {
 	width = 10,

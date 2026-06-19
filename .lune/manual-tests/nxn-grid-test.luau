@@ -1,5 +1,5 @@
 local stdio = require("@lune/stdio")
-local Grid = require("@plugin/Generators/Grid")
+local Grid = require("../../src/Plugin/Generators/Grid")
 
 
 local widthInput, heightInput
