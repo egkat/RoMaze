@@ -79,7 +79,8 @@ function Builder.build(grid: { Cell }, gridConfigs: GridConfigs, builderConfigs:
 	for _, cell in grid do
 		local cellCenter = Builder.calculateCellCenter(cell, builderConfigs)
 
-		if cell.walls.North then
+		-- Let south walls always generate over north walls
+		if cell.walls.North and cell.row == 1 then
 			Builder.buildWall(cell, "North", cellCenter, builderConfigs, container)
 		end
 
@@ -87,11 +88,12 @@ function Builder.build(grid: { Cell }, gridConfigs: GridConfigs, builderConfigs:
 			Builder.buildWall(cell, "South", cellCenter, builderConfigs, container)
 		end
 
+		-- Let east walls always generate over west walls
 		if cell.walls.East then
 			Builder.buildWall(cell, "East", cellCenter, builderConfigs, container)
 		end
 
-		if cell.walls.West then
+		if cell.walls.West and cell.column == 1 then
 			Builder.buildWall(cell, "West", cellCenter, builderConfigs, container)
 		end
 	end

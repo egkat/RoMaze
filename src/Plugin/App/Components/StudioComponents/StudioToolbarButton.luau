@@ -22,7 +22,7 @@ local builderConfigs = {
 	parent = workspace,
 }
 
-local state = RandomizedDepthFirstSearch.setup(gridConfigs, os.time())
+local state = RandomizedDepthFirstSearch.setup(gridConfigs, 123)
 
 while not state.generationCompleted do
 	RandomizedDepthFirstSearch.step(state)
