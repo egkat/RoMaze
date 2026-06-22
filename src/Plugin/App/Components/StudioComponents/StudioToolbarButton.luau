@@ -1,3 +1,5 @@
+local Builder = require(script.Parent.Parent.Parent.Parent.Builder)
+local BuilderTypes = require(script.Parent.Parent.Parent.Parent.Builder.BuilderTypes)
 local React = require(script.Parent.Parent.Parent.Parent.Parent.Packages.React)
 local StudioToolbarContext = require(script.Parent.StudioToolbarContext)
 
@@ -8,6 +10,25 @@ type StudioToolbarButtonProps = {
 	active: boolean?,
 	onClick: (() -> ())?,
 }
+
+local RandomizedDepthFirstSearch = require(script.Parent.Parent.Parent.Parent.Generators.Algorithms.RandomizedDepthFirstSearch)
+
+local gridConfigs = { width = 10, height = 10 }
+local builderConfigs = {
+	cellSize = 6,
+	wallHeight = 8,
+	wallThickness = 0.5,
+	floorThickness = 1,
+	parent = workspace,
+}
+
+local state = RandomizedDepthFirstSearch.setup(gridConfigs, os.time())
+
+while not state.generationCompleted do
+	RandomizedDepthFirstSearch.step(state)
+end
+
+
 
 local function StudioToolbarButton(props: StudioToolbarButtonProps)
 	local toolbar = React.useContext(StudioToolbarContext)
@@ -27,6 +48,9 @@ local function StudioToolbarButton(props: StudioToolbarButtonProps)
 			if props.onClick then
 				props.onClick()
 			end
+
+			Builder.build(state.grid, gridConfigs, builderConfigs)
+
 		end)
 
 		return function()

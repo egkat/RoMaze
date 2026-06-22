@@ -19,8 +19,8 @@ export type RandomizedDepthFirstSearchState = {
 local RandomizedDepthFirstSearch = {}
 
 function RandomizedDepthFirstSearch.setup(configs: GridConfigs, seed: number): RandomizedDepthFirstSearchState
-	assert(typeof(configs) == "table", `RandomizedDepthFirstSearch: configs must be a table`)
-	assert(typeof(seed) == "number", `RandomizedDepthFirstSearch: seed must be a number`)
+	assert(typeof(configs) == "table", `[RandomizedDepthFirstSearch]: configs must be a table`)
+	assert(typeof(seed) == "number", `[RandomizedDepthFirstSearch]: seed must be a number`)
 
 	local random = Random.new(seed)
 	local grid = Grid.buildGrid(configs)
@@ -44,7 +44,7 @@ function RandomizedDepthFirstSearch.setup(configs: GridConfigs, seed: number): R
 end
 
 function RandomizedDepthFirstSearch.step(state: RandomizedDepthFirstSearchState)
-	assert(typeof(state) == "table", `RandomizedDepthFirstSearch: state must be a table`)
+	assert(typeof(state) == "table", `[RandomizedDepthFirstSearch]: state must be a table`)
 
 	if state.generationCompleted then
 		return

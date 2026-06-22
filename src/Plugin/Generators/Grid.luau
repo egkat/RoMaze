@@ -35,10 +35,10 @@ function Grid.buildCell(row: number, column: number): Cell
 end
 
 function Grid.buildGrid(configs: GridConfigs): { Cell }
-	assert(typeof(configs.width) == "number", `Grid: Width must be a number`)
-	assert(typeof(configs.height) == "number", `Grid: Height must be a number`)
-	assert(configs.width % 1 == 0, `Grid: Width must be a positive integer [1, 2, 3, ...]`)
-	assert(configs.height % 1 == 0, `Grid: Height must be a positive integer [1, 2, 3, ...]`)
+	assert(typeof(configs.width) == "number", `[Grid]: Width must be a number`)
+	assert(typeof(configs.height) == "number", `[Grid]: Height must be a number`)
+	assert(configs.width % 1 == 0, `[Grid]: Width must be a positive integer [1, 2, 3, ...]`)
+	assert(configs.height % 1 == 0, `[Grid]: Height must be a positive integer [1, 2, 3, ...]`)
 
 	local grid = {}
 
@@ -52,11 +52,11 @@ function Grid.buildGrid(configs: GridConfigs): { Cell }
 end
 
 function Grid.getCell(grid: { Cell }, configs: GridConfigs, row: number, column: number): Cell?
-	assert(typeof(grid) == "table", `Grid: grid must be a table`)
-	assert(typeof(configs.width) == "number", `Grid: Width must be a number`)
-	assert(typeof(configs.height) == "number", `Grid: Height must be a number`)
-	assert(typeof(row) == "number", `Grid: row must be a number`)
-	assert(typeof(column) == "number", `Grid: column must be a number`)
+	assert(typeof(grid) == "table", `[Grid]: grid must be a table`)
+	assert(typeof(configs.width) == "number", `[Grid]: Width must be a number`)
+	assert(typeof(configs.height) == "number", `[Grid]: Height must be a number`)
+	assert(typeof(row) == "number", `[Grid]: row must be a number`)
+	assert(typeof(column) == "number", `[Grid]: column must be a number`)
 
 	-- Check rather than assert as row/column = 0 possible for neighboring cells of cell on an edge
 	if column < 1 or column > configs.width or row < 1 or row > configs.height then
@@ -69,10 +69,10 @@ function Grid.getCell(grid: { Cell }, configs: GridConfigs, row: number, column:
 end
 
 function Grid.getAllCellNeighbors(grid: { Cell }, configs: GridConfigs, cell: Cell): { NeighborEntry }
-	assert(typeof(grid) == "table", `Grid: grid must be a table`)
-	assert(typeof(cell) == "table", `Grid: cell must be a table`)
-	assert(typeof(configs.width) == "number", `Grid: Width must be a number`)
-	assert(typeof(configs.height) == "number", `Grid: Height must be a number`)
+	assert(typeof(grid) == "table", `[Grid]: grid must be a table`)
+	assert(typeof(cell) == "table", `[Grid]: cell must be a table`)
+	assert(typeof(configs.width) == "number", `[Grid]: Width must be a number`)
+	assert(typeof(configs.height) == "number", `[Grid]: Height must be a number`)
 
 	local neighborCells = {}
 
@@ -108,9 +108,9 @@ function Grid.getUnvisitedCellNeighbors(grid: { Cell }, configs: GridConfigs, ce
 end
 
 function Grid.removeWall(cellOne: Cell, cellTwo: Cell, direction: Wall)
-	assert(typeof(cellOne) == "table", `Grid: cell one must be a table`)
-	assert(typeof(cellTwo) == "table", `Grid: cell two must be a table`)
-	assert(typeof(direction) == "string", `Grid: direction must be a string`)
+	assert(typeof(cellOne) == "table", `[Grid]: cell one must be a table`)
+	assert(typeof(cellTwo) == "table", `[Grid]: cell two must be a table`)
+	assert(typeof(direction) == "string", `[Grid]: direction must be a string`)
 
 	local oppositeDirection: Wall = OPPOSITE_MAPPING[direction]
 
