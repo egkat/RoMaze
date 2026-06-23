@@ -3,9 +3,14 @@
 registry = "test"
 
 [[package]]
+name = "csqrl/sift"
+version = "0.0.11"
+dependencies = []
+
+[[package]]
 name = "emichaelg/romaze"
 version = "0.1.0"
-dependencies = [["React", "jsdotlua/react@17.2.1"], ["ReactRoblox", "jsdotlua/react-roblox@17.2.1"]]
+dependencies = [["React", "jsdotlua/react@17.2.1"], ["ReactRoblox", "jsdotlua/react-roblox@17.2.1"], ["Sift", "csqrl/sift@0.0.11"]]
 
 [[package]]
 name = "jsdotlua/boolean"
