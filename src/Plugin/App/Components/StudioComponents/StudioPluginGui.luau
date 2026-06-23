@@ -1,9 +1,9 @@
 local Constants = require(script.Parent.Parent.Parent.Parent.Data.Constants)
 local React = require(script.Parent.Parent.Parent.Parent.Parent.Packages.React)
 local ReactRoblox = require(script.Parent.Parent.Parent.Parent.Parent.Packages.ReactRoblox)
+local Theme = require(script.Parent.Parent.Parent.Theme)
 
 local StudioPluginContext = require(script.Parent.StudioPluginContext)
-local Theme = require(script.Parent.Parent.Theme)
 
 local e = React.createElement
 
@@ -16,7 +16,7 @@ export type StudioPluginGuiProps = {
 	minimumSize: Vector2?,
 	onInitialState: ((initialState: boolean) -> ())?,
 	onClose: (() -> ())?,
-	children: React.ReactNode,
+	children: any
 }
 
 local DefaultProps = {

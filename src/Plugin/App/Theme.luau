@@ -1,5 +1,5 @@
-local React = require(script.Parent.Parent.Parent.Parent.Packages.React)
-local GetStudioSetting = require(script.Parent.Parent.Parent.Utils.GetStudioSetting)
+local React = require(script.Parent.Parent.Parent.Packages.React)
+local GetStudioSetting = require(script.Parent.Parent.Utils.GetStudioSetting)
 
 local e = React.createElement
 
