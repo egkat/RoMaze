@@ -18,24 +18,24 @@ export type AppProps = {
 }
 
 local AppStatus = Strict("AppStatus", {
+	Home = "Home",
 	Structure = "Structure",
 	Appearance = "Appearance",
+	Build = "Build",
 	Settings = "Settings",
 })
 
 local function App(props: AppProps)
 	local guiEnabled, setGuiEnabled = React.useState(false)
-	local appStatus, setAppStatus = React.useState(AppStatus.Structure)
+	local appStatus, setAppStatus = React.useState(AppStatus.Home)
 
 	local function createPage(_appStatus, extraProps)
-		
 		local mergedProps = Sift.Dictionary.merge(extraProps, {
 			component = StatusPages[_appStatus],
-			active = appStatus == _appStatus
+			active = appStatus == _appStatus,
 		})
 
 		return e(Page, mergedProps)
-
 	end
 
 	return e(StudioPluginContext.Provider, { value = props.plugin }, {
@@ -66,7 +66,8 @@ local function App(props: AppProps)
 					setGuiEnabled(false)
 				end,
 			}, {
-				StructurePage = createPage(AppStatus.Structure)
+				HomePage = createPage(AppStatus.Home),
+				StructurePage = createPage(AppStatus.Structure),
 			}),
 		}),
 	})
