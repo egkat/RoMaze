@@ -8,6 +8,6 @@ Constants.WIDGET_TITLE = Constants.PLUGIN_NAME
 Constants.WIDGET_DEFAULT_SIZE = Vector2.new(300, 400)
 Constants.WIDGET_MIN_SIZE = Vector2.new(220, 250)
 
-Constants.SIDEBAR_WIDTH = 72
+Constants.SIDEBAR_WIDTH = 50
 
 return Constants

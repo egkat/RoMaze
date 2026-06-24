@@ -1,3 +1,4 @@
+local Sidebar = require(script.Components.Navigation.Sidebar)
 local StudioPluginContext = require(script.Components.StudioComponents.StudioPluginContext)
 local StudioPluginGui = require(script.Components.StudioComponents.StudioPluginGui)
 local StudioToolbar = require(script.Components.StudioComponents.StudioToolbar)
@@ -66,8 +67,23 @@ local function App(props: AppProps)
 					setGuiEnabled(false)
 				end,
 			}, {
-				HomePage = createPage(AppStatus.Home),
-				StructurePage = createPage(AppStatus.Structure),
+
+				SideBar = e(Sidebar, {
+					activeStatus = appStatus,
+					onSelect = setAppStatus,
+				}),
+
+				Pages = e("Frame", {
+					Position = UDim2.new(0, Constants.SIDEBAR_WIDTH, 0.5, 0),
+					Size = UDim2.new(1, -Constants.SIDEBAR_WIDTH, 1, 0),
+					BackgroundTransparency = 1,
+					AnchorPoint = Vector2.new(0, 0.5),
+					BorderSizePixel = 0,
+					ClipsDescendants = true,
+				}, {
+					HomePage = createPage(AppStatus.Home),
+					StructurePage = createPage(AppStatus.Structure),
+				}),
 			}),
 		}),
 	})

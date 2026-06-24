@@ -22,6 +22,11 @@ return {
         Wait = "rbxassetid://91695442662953",
         Busy = "rbxassetid://123709149689576",
         Cross = "rbxassetid://126934452367638",
+    },
+
+    MiscellaneousIcons = {
+        Placeholder = "rbxassetid://87885814698504",
+
     }
 
 }

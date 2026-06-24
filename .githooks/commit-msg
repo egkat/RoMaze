@@ -1,5 +1,6 @@
 #!/bin/sh
-# Enforces conventional commit prefixes. Enable with: git config core.hooksPath .githooks
+# Enforces conventional commit prefixes and a required version bump.
+# Enable with: git config core.hooksPath .githooks
 
 pattern="^(feat|fix|chore|refactor|docs|test)(\(.+\))?: .+"
 message=$(head -n1 "$1")
@@ -8,4 +9,21 @@ if ! echo "$message" | grep -qE "$pattern"; then
   echo "Commit message must start with one of: feat:, fix:, chore:, refactor:, docs:, test:" >&2
   echo "Got: $message" >&2
   exit 1
+fi
+
+version_file="Version.txt"
+if git rev-parse --verify HEAD >/dev/null 2>&1 && git cat-file -e "HEAD:$version_file" 2>/dev/null; then
+  old_version=$(git show "HEAD:$version_file" | tr -d '[:space:]')
+  new_version=$(git show ":$version_file" 2>/dev/null | tr -d '[:space:]')
+
+  if [ "$old_version" = "$new_version" ]; then
+    echo "$version_file must be raised for every commit (currently $old_version)" >&2
+    exit 1
+  fi
+
+  lowest=$(printf '%s\n%s\n' "$old_version" "$new_version" | sort -V | head -n1)
+  if [ "$lowest" != "$old_version" ]; then
+    echo "$version_file must be raised, not lowered (currently $old_version, got $new_version)" >&2
+    exit 1
+  fi
 fi
