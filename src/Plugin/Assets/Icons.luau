@@ -30,7 +30,7 @@ return {
 	},
 
 	SidebarIcons = {
-		Home = "",
+		Home = "rbxassetid://81339367783155",
 		Structure = "rbxassetid://128461297434939",
 		Appearance = "rbxassetid://117031728528610",
 		Build = "rbxassetid://94580159329654",

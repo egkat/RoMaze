@@ -83,6 +83,9 @@ local function App(props: AppProps)
 				}, {
 					HomePage = createPage(AppStatus.Home),
 					StructurePage = createPage(AppStatus.Structure),
+					AppearancePage = createPage(AppStatus.Appearance),
+					BuildPage = createPage(AppStatus.Build),
+					SettingsPage = createPage(AppStatus.Settings)
 				}),
 			}),
 		}),

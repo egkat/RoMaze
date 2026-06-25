@@ -12,11 +12,11 @@ export type SidebarProps = {
 }
 
 local SIDEBAR_BUTTON_CONFIGS = {
-	{ id = "Home", label = "Home", color = Color3.fromRGB(59, 130, 246), icon = Icons.RoMazePluginIcon.VersionOne },
-	{ id = "Structure", label = "Structure", color = Color3.fromRGB(34, 197, 94), icon = Icons.SidebarIcons.Structure },
-	{ id = "Appearance", label = "Appearance",  color = Color3.fromRGB(168, 85, 247), icon = Icons.SidebarIcons.Appearance},
-	{ id = "Build", label = "Build",  color = Color3.fromRGB(249, 115, 22), icon = Icons.SidebarIcons.Build},
-	{ id = "Settings", label = "Settings", color = Color3.fromRGB(107, 114, 128), icon = Icons.SidebarIcons.Settings },
+	{ id = "Home", label = "Home", color = Constants.PAGE_COLORS.HOME, icon = Icons.RoMazePluginIcon.VersionOne },
+	{ id = "Structure", label = "Structure", color = Constants.PAGE_COLORS.STRUCTURE, icon = Icons.SidebarIcons.Structure },
+	{ id = "Appearance", label = "Appearance",  color = Constants.PAGE_COLORS.APPEARANCE, icon = Icons.SidebarIcons.Appearance},
+	{ id = "Build", label = "Build",  color = Constants.PAGE_COLORS.BUILD, icon = Icons.SidebarIcons.Build},
+	{ id = "Settings", label = "Settings", color = Constants.PAGE_COLORS.SETTINGS, icon = Icons.SidebarIcons.Settings },
 }
 local function Sidebar(props: SidebarProps)
 	local theme = Theme.useTheme()

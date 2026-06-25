@@ -6,11 +6,11 @@ local Theme = require(script.Parent.Parent.Theme)
 
 local e = React.createElement
 
-export type AppearanceProps = {
+export type SettingsProps = {
 	transparency: number,
 }
 
-local function Appearance(props: AppearanceProps)
+local function Settings(props: SettingsProps)
 	local theme = Theme.useTheme()
 
 	return e(React.Fragment, nil, {
@@ -27,7 +27,7 @@ local function Appearance(props: AppearanceProps)
 				Position = UDim2.fromScale(0.5, 0),
 				Size = UDim2.new(1, 0, 0, 35),
 				BorderSizePixel = 0,
-				BackgroundColor3 = Constants.PAGE_COLORS.APPEARANCE,
+				BackgroundColor3 = Constants.PAGE_COLORS.SETTINGS,
 			}, {
 
 				InsetFrame = e("Frame", {
@@ -38,11 +38,11 @@ local function Appearance(props: AppearanceProps)
 					BorderSizePixel = 0,
 				}, {
 
-					AppearanceLabel = e(TextLabel, {
+					SettingsLabel = e(TextLabel, {
 						AnchorPoint = Vector2.new(0, 0.5),
 						Position = UDim2.fromScale(0, 0.5),
 						Size = UDim2.fromScale(1, 1),
-						Text = "Appearance",
+						Text = "Settings",
 						TextSize = 24,
 						Stroke = {
 							Color = Color3.fromRGB(0, 0, 0),
@@ -51,7 +51,7 @@ local function Appearance(props: AppearanceProps)
 						},
 						Prefix = {
 							Size = UDim2.fromScale(1, 1),
-							Image = Icons.SidebarIcons.Appearance,
+							Image = Icons.SidebarIcons.Settings,
 							HorizontalAlignment = Enum.HorizontalAlignment.Left,
 						},
 						Gradient = {
@@ -100,4 +100,4 @@ local function Appearance(props: AppearanceProps)
 	})
 end
 
-return Appearance
+return Settings
