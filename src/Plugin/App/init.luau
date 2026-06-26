@@ -58,8 +58,8 @@ local function App(props: AppProps)
 			}),
 			StudioPluginGui = e(StudioPluginGui, {
 				active = guiEnabled,
-				floatingSize = Vector2.new(320, 210),
-				minimumSize = Vector2.new(300, 210),
+				floatingSize = Vector2.new(450, 550),
+				minimumSize = Vector2.new(360, 400),
 				onInitialState = function(initialState)
 					setGuiEnabled(initialState)
 				end,
