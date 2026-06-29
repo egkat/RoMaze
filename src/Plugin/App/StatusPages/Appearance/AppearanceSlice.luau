@@ -13,6 +13,16 @@ local actions = {
 			return material
 		end)
 	end,
+	setSelectedPartColor = function(color: Color3)
+		selectedPartColor(function(_oldColor: Color3)
+			return color
+		end)
+	end,
+	setSelectedPartTransparency = function(transparency: number)
+		selectedPartTransparency(function(_oldTransparency: number)
+			return transparency
+		end)
+	end,
 }
 
 return {
@@ -20,6 +30,6 @@ return {
 	state = {
 		selectedPartMaterial = selectedPartMaterial,
 		selectedPartColor = selectedPartColor,
-        selectedPartTransparency = selectedPartTransparency
+		selectedPartTransparency = selectedPartTransparency,
 	},
 }
